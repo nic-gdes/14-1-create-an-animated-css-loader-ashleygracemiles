@@ -1,0 +1,77 @@
+/* overlay of blue for loader background */
+#loader-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #242F3F;
+}
+
+/* outer square shape */
+#loader {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    border: 4px solid white;
+    top: 50%;
+    left: 50%;
+    animation: loader 2s infinite ease;
+}
+
+/* inner square fill */
+#loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+/* outer square animation that turns it 360 degrees within four quarters */
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* inner fill animation that grows and shrinks the shape within four quarters */
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
